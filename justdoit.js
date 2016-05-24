@@ -18,6 +18,14 @@ var main = function() {
   $(document).on("click", '.glyphicon-star', function() {
     $(this).toggleClass('active');
   });
+
+  if (annyang) {
+    var commands = {
+      'add *item': add,
+    };
+    annyang.addCommands(commands);
+    annyang.start();
+  }
 };
 
 $(document).ready(main);
